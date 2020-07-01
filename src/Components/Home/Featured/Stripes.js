@@ -51,9 +51,7 @@ class Stripes extends Component {
           top: [stripe.top],
           timing: { delay: stripe.delay, duration: 200, ease: easePolyOut },
           events: {
-            end() {
-              console.log(stripe.background);
-            },
+            end() {},
           },
         }}
       >

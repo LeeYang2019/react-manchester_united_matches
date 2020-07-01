@@ -1,6 +1,7 @@
 # man_city
 
 ### Description
+
 ### Goals
 
 <ol>
@@ -16,4 +17,3 @@
 ### Link to Deployed Application
 
 ### Screenshots
-

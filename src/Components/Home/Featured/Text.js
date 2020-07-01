@@ -13,9 +13,7 @@ class Text extends Component {
         rotate: [360],
         timing: { duration: 1000, ease: easePolyOut },
         events: {
-          end() {
-            console.log('done');
-          },
+          end() {},
         },
       }}
     >
