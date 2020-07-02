@@ -48,3 +48,17 @@ export const reverseArray = (array) => {
 
   return reversedArray;
 };
+
+export const validate = (element) => {
+  let error = [true, ''];
+
+  if (element.validation.required) {
+    //valid if not blank
+    const valid = element.value.trim() !== '';
+    //if not valid, output message otherwise display nothing
+    const message = `${!valid ? 'This field is required' : ''}`;
+    //if not valid, assign error message else keep as is
+    error = !valid ? [valid, message] : error;
+  }
+  return error;
+};
