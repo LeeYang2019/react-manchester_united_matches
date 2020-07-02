@@ -25,21 +25,21 @@ class Enroll extends Component {
       },
     },
   };
+
   updateForm(element) {
+    //create a copy of formData
     const newFormData = { ...this.state.formData };
-
-    console.log(newFormData);
-
+    //get the element and its contents from element id
     const newElement = { ...newFormData[element.id] };
-
-    console.log(newElement);
-
+    //get target value
     newElement.value = element.event.target.value;
-
+    //validate
     let validData = validate(newElement);
-
-    console.log(validData);
-
+    //get valid true or false
+    newElement.valid = validData[0];
+    //get validation message
+    newElement.validationMessage = validData[1];
+    //copy newElement back to newFormData
     newFormData[element.id] = newElement;
 
     this.setState({

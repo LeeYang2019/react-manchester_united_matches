@@ -13,6 +13,7 @@ const FormField = ({ id, formData, change }) => {
               value={formData.value}
               onChange={(event) => change({ event, id })}
             />
+            {showError()}
           </div>
         );
         break;

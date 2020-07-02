@@ -41,21 +41,31 @@ export const firebaseLooper = (snapshot) => {
 
 export const reverseArray = (array) => {
   let reversedArray = [];
-
+  //beginning at the end, return array values
   for (let i = array.length - 1; i >= 0; i--) {
+    //push into reversedArray
     reversedArray.push(array[i]);
   }
-
+  //return reversedArray
   return reversedArray;
 };
 
 export const validate = (element) => {
   let error = [true, ''];
 
+  if (element.validation.email) {
+    //check if value is valid
+    const valid = /\S+@\S+\.\S+/.test(element.value);
+    //if not valid, construct message making field required
+    const message = `${!valid ? 'Must be a valid email' : ''}`;
+    //if not valid, assign error message else keep as is
+    error = !valid ? [valid, message] : error;
+  }
+
   if (element.validation.required) {
-    //valid if not blank
+    //evaluates to true if element value is not blank
     const valid = element.value.trim() !== '';
-    //if not valid, output message otherwise display nothing
+    //if not valid, construct message making field required
     const message = `${!valid ? 'This field is required' : ''}`;
     //if not valid, assign error message else keep as is
     error = !valid ? [valid, message] : error;
