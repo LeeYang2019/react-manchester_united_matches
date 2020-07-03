@@ -53,6 +53,7 @@ export const reverseArray = (array) => {
 export const validate = (element) => {
   let error = [true, ''];
 
+  //check if valid email
   if (element.validation.email) {
     //check if value is valid
     const valid = /\S+@\S+\.\S+/.test(element.value);
@@ -62,6 +63,7 @@ export const validate = (element) => {
     error = !valid ? [valid, message] : error;
   }
 
+  //check if field is empty
   if (element.validation.required) {
     //evaluates to true if element value is not blank
     const valid = element.value.trim() !== '';
