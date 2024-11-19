@@ -5,7 +5,7 @@
   "dependencies": {
     "@material-ui/core": "^4.10.2",
     "d3-ease": "^1.0.6",
-    "firebase": "^7.15.5",
+    "firebase": "^10.9.0",
     "google-auth-library": "^6.0.2",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
